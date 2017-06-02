@@ -14,40 +14,19 @@ The following demo application shows imaginary buildings and usage data. Its pur
 
 ## Instructions
 
-1. Fork and then clone the repo.
-2. Run and try the sample.
-
-The application is designed in a way that it can also be used for other locations or datasets. The following steps need to be done in order to use the application with your own data:
-
-1. Create a multipatch dataset that contains the following attributes for each feature: 
-- building id (int)
-- floor level (int)
-- usage type (string)
-- area (float)
-
-2. Publish the dataset on either ArcGIS Portal or ArcGIS Online: <a target="blank" href="https://blogs.esri.com/esri/arcgis/2017/01/03/72321/">Scene Layer publishing tutorial for ArcGIS Online</a> (beta)
-
-3. Create a webscene and load the scene layer that you have published in step 2
-
-4. Change the following properties of the settings_demo object in the app.js file of the application:
-- url-property: change to your Portal URL (or ArcGIS Online)
-- webscene-property: fill in the portal item ID of the webscene
-- usagename-property: change to attribute name containing usage type
-- floorname / OIDname / buildingIDname / areaname: respectively
-
-5. Before deploying the application in production, make sure you are in possession of all required licenses.
-
-## Resources
-The following APIs have been used to create this application:
-
-* <a target="blank" href="https://developers.arcgis.com/javascript/">ArcGIS JS API 4.3</a>
-* <a target="blank" href="https://github.com/Esri/calcite-web">Esri Calcite Web</a>
-* <a target="blank" href="https://github.com/amcharts">amCharts</a>
-* <a target="blank" href="https://github.com/leongersen/noUiSlider">noUISlider</a>
+Please visit the original github page from Esri for the Instructions: 
+<a target="blank" href="https://github.com/Esri/c-through">C-Through from Esri</a>
 
 ## Disclaimer
 
 This demo version of c-through is not maintained. There is no support available for deployment or development of the application.
+
+## Data Source
+
+Based on open data from City of Cologne provided by IT.NRW.
+
+Die Geobasisdaten von NRW stehen unter der Datenlizenz Deutschland Namensnennung 2.0. Informationen zum korrekten Quellenvermerk finden Sie <a target="blank" href="http://www.bezreg-koeln.nrw.de/brk_internet/geobasis/lizenzbedingungen_geobasis_nrw.pdf">hier</a>.
+Quelle: https://open.nrw
 
 ## Contributing
 
