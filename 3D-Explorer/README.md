@@ -1,6 +1,6 @@
 # German Version of Esri's c-through App
 
-![screenshot](https://cloud.githubusercontent.com/assets/27951811/25848186/7a69ac2a-34b9-11e7-852c-568a277ae0fd.png https://raw.githubusercontent.com/oertac/oertac.github.io/master/3D-Explorer/img/C_through_Screenshot.png)
+![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/3D-Explorer/img/C_through_Screenshot.png)
 
 C-Through is a prototype for interactive 3D urban planning analysis on the web based on the ArcGIS JS API 4.3. The application visualizes and analysis 3D features according to user preferences and makes it possible to select and filter specific buildings, floors and units by attributes for further investigation. Charts and statistics are available according to selection and filtering. The application was implemented in the scope of an internship at Esri R&D Zurich and initially featured data from three locations: Zurich, Vancouver and Dubai. Those datasets are not publicly available.
 
