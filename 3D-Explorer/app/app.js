@@ -70,12 +70,12 @@ define([
         // application settings
         var settings_demo = {
             name: "Demo",
-            url: "http://arcgis.com",           // portal URL for config
+            url: "http://arcgis.com/",           // portal URL for config
             webscene: "e75ba588be14414f804959e06485aeb7",   // portal item ID of the webscene
             usagename: "usage",                             // usage attribute (string)
-            floorname: "floorid",                           // floor attribute (int)
+            floorname: "floorID",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
-            buildingIDname: "buildingid",                   // building attribute (int)
+            buildingIDname: "buildingID",                   // building attribute (int)
             areaname: "unitarea",                           // area attribute (float)
             color: [                                        // color ramp for unique value renderer
                     [178, 171, 210, 1],                     
@@ -167,7 +167,7 @@ define([
                 });
 
                 // create home button that leads back to welcome page
-                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Startseite" }, header);
+                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Home" }, header);
 
                 on(home, "click", function () {
                     var URI = window.location.href;
@@ -263,7 +263,7 @@ define([
 
             getSettingsFromUser: function (settings) {
                 if (settings === "demo"){
-                    dom.byId("headerTitle").innerHTML = "3D-Gebäude Explorer";
+                    dom.byId("headerTitle").innerHTML = "c-through Demo";
                     return settings_demo;
                 }
             }

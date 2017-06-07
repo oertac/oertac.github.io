@@ -64,13 +64,13 @@ define([
 
                 var container = domCtr.create("div", { id: "welcome" }, win.body());
 
-                domCtr.create("div", { id: "welcomeTitle", className: "animate-bottom", innerHTML: "c-through: Der 3D-Gebäude Explorer" }, container);
+                domCtr.create("div", { id: "welcomeTitle", className: "animate-bottom", innerHTML: "c-through" }, container);
                 domCtr.create("hr", { id: "welcomeLine", className: "animate-bottom", style: "width:300px" }, container);
                 domCtr.create("img", { id: "esri-logo", src: "img/Capture.PNG", style: "width:200px;height:48px", top: "65%", left: "35%" }, container);
 
-                domCtr.create("div", { id: "description1", innerHTML: "Project by L. Staehli & J. Gutierrez" }, container);
-                domCtr.create("div", { id: "description2", innerHTML: "German Version by Esri Germany" }, container);
-				this.demoLink = domCtr.create("div", { id: "demo-link", innerHTML: "Starten" }, container);
+                domCtr.create("div", { id: "description1", innerHTML: "Internship poject by Lisa Staehli" }, container);
+                domCtr.create("div", { id: "description2", innerHTML: "supervised by Javier Gutierrez" }, container);
+                this.demoLink = domCtr.create("div", { id: "demo-link", innerHTML: "Demo" }, container);
 
             },
 

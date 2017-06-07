@@ -176,9 +176,9 @@ define([
 
             createUI: function (container) {
 
-                this.titleFilter = domCtr.create("div", { className: "titleFilter", id: "titleFilter", innerHTML: "Filtern nach" }, container);
-                domCtr.create("div", { className: "titleFilter", id: "titleAreaMin", innerHTML: "Min. Fläche" }, container);
-                domCtr.create("div", { className: "titleFilter", id: "titleAreaMax", innerHTML: "Max. Fläche" }, container);
+                this.titleFilter = domCtr.create("div", { className: "titleFilter", id: "titleFilter", innerHTML: "Filter by" }, container);
+                domCtr.create("div", { className: "titleFilter", id: "titleAreaMin", innerHTML: "Min Area" }, container);
+                domCtr.create("div", { className: "titleFilter", id: "titleAreaMax", innerHTML: "Max Area" }, container);
 
                 this.reset = domCtr.create("div", { className: "button", id: "reset", innerHTML: "Reset" }, container);
 
@@ -200,7 +200,7 @@ define([
 
                 queryTools.distinctValues(this.settings.layer1, this.settings.floorname, this.settings.OIDname, function (distinctValues) {
                     distinctValues.sort();
-                    distinctValues.unshift("Etage Auswählen");
+                    distinctValues.unshift("Select Floor");
 
                     this.setDropdown("FloorLevel", distinctValues, this.LevelFilterContainer, function (floorSelector) {
                         this.floorSelector = floorSelector;
@@ -217,7 +217,7 @@ define([
 
                 queryTools.distinctValues(this.settings.layer1, this.settings.usagename, this.settings.OIDname, function (distinctValues) {
                     distinctValues.sort();
-                    distinctValues.unshift("Nutzung Auswählen");
+                    distinctValues.unshift("Select Usage");
 
                     this.setDropdown("Usage", distinctValues, this.UsageFilterContainer, function (usageSelector) {
                         this.usageSelector = usageSelector;

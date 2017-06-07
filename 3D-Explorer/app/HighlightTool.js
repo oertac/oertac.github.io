@@ -92,15 +92,15 @@ define([
             updateUI: function (state) {
 
                 if (state === "city") {
-                    this.label.innerHTML = "Selection: City Level";
+                    this.label.innerHTML = "Auswahl: Alle";
                 }
 
                 if (state === "building") {
-                    this.label.innerHTML = "Selection: Building Level";
+                    this.label.innerHTML = "Auswahl: einzelnes Gebäude";
                 }
 
                 if (state === "multiple buildings") {
-                    this.label.innerHTML = "Selection: Multiple Buildings";
+                    this.label.innerHTML = "Auswahl: mehrere Gebäude";
                 }
             },
 

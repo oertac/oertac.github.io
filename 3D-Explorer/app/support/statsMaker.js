@@ -154,13 +154,13 @@ define([
 
             createChart: function(data, callback){
 
-                dom.byId("buildingInfo").innerHTML = "ausgewählte Objekte: " + data.numberofBuildings;
-                dom.byId("numberofunits").innerHTML = "<b>Summe:</b>      " + data.numberofUnits;
-                dom.byId("usage").innerHTML = "<b>Häufigste Nutzung:</b>        " + data.mostCommonUsage.usage;
-                dom.byId("averagearea").innerHTML = "<b>Durchschn. Fläche:</b>       " + data.averageArea + " m2";
-                dom.byId("maxarea").innerHTML = "<b>Max. Fläche:</b>       " + data.areaMax + " m2";
-                dom.byId("averagefloor").innerHTML = "<b>Durchschn. Geshosszahl:</b>      " + data.averageFloor;
-                dom.byId("maxfloor").innerHTML = "<b>Max. Geshosszahl:</b>      " + data.floorMax;
+                dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
+                dom.byId("numberofunits").innerHTML = "<b>Number of Units:</b>      " + data.numberofUnits;
+                dom.byId("usage").innerHTML = "<b>Most common usage:</b>        " + data.mostCommonUsage.usage;
+                dom.byId("averagearea").innerHTML = "<b>Average Area:</b>       " + data.averageArea + " m2";
+                dom.byId("maxarea").innerHTML = "<b>Max Area:</b>       " + data.areaMax + " m2";
+                dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
+                dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
 
                 callback("loaded");
 
