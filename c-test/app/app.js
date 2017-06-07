@@ -71,7 +71,7 @@ define([
         var settings_demo = {
             name: "Demo",
             url: "http://arcgis.com/",           // portal URL for config
-            webscene: "145baf6aac624ea08ffb073996089e14",   // portal item ID of the webscene
+            webscene: "e75ba588be14414f804959e06485aeb7",   // portal item ID of the webscene
             usagename: "usage",                             // usage attribute (string)
             floorname: "floorID",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
