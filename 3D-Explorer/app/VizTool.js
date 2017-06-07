@@ -100,12 +100,12 @@ define([
 
 
                 domCtr.create("div", { id: "titleStats", innerHTML: "Statistiken" }, "statsDiv");
-                domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Summe:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "usage", innerHTML: "<b>Häufigste Nutzung:       </b>" }, "statsDiv");
-                domCtr.create("div", { id: "averagearea", innerHTML: "<b>Durchschn. Fläche:      </b>" }, "statsDiv");
-                domCtr.create("div", { id: "maxarea", innerHTML: "<b>Max. Fläche:      </b>" }, "statsDiv");
-                domCtr.create("div", { id: "averagefloor", innerHTML: "<b>Durchschn. Geshosszahl:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "maxfloor", innerHTML: "<b>Max. Geshosszahl:     </b>" }, "statsDiv");
+                domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Summe:    </b>" }, "statsDiv");
+                domCtr.create("div", { id: "usage", innerHTML: "<b>Häufigste Nutzung:      </b>" }, "statsDiv");
+                domCtr.create("div", { id: "averagearea", innerHTML: "<b>Durchschn. Fläche:     </b>" }, "statsDiv");
+                domCtr.create("div", { id: "maxarea", innerHTML: "<b>Max. Fläche:     </b>" }, "statsDiv");
+                domCtr.create("div", { id: "averagefloor", innerHTML: "<b>Durchschn. Geshosszahl:    </b>" }, "statsDiv");
+                domCtr.create("div", { id: "maxfloor", innerHTML: "<b>Max. Geshosszahl:    </b>" }, "statsDiv");
 
             },
 
