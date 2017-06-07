@@ -70,7 +70,7 @@ define([
         // application settings
         var settings_demo = {
             name: "Demo",
-            url: "http://arcgis.com/home",           // portal URL for config
+            url: "http://arcgis.com/",           // portal URL for config
             webscene: "145baf6aac624ea08ffb073996089e14",   // portal item ID of the webscene
             usagename: "usage",                             // usage attribute (string)
             floorname: "floorID",                           // floor attribute (int)
