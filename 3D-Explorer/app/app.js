@@ -167,7 +167,7 @@ define([
                 });
 
                 // create home button that leads back to welcome page
-                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Home" }, header);
+                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Startseite" }, header);
 
                 on(home, "click", function () {
                     var URI = window.location.href;
@@ -263,7 +263,7 @@ define([
 
             getSettingsFromUser: function (settings) {
                 if (settings === "demo"){
-                    dom.byId("headerTitle").innerHTML = "c-through Demo";
+                    dom.byId("headerTitle").innerHTML = "3D-Gebäude Explorer";
                     return settings_demo;
                 }
             }
