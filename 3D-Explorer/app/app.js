@@ -70,8 +70,8 @@ define([
         // application settings
         var settings_demo = {
             name: "Demo",
-            url: "https://portal02.eggits.net/portal/",           // portal URL for config
-            webscene: "5ac6faea98634b83a5d54e54311e4b0e",   // portal item ID of the webscene
+            url: "http://arcgis.com/",           // portal URL for config
+            webscene: "145baf6aac624ea08ffb073996089e14",   // portal item ID of the webscene
             usagename: "usage",                             // usage attribute (string)
             floorname: "floorid",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
