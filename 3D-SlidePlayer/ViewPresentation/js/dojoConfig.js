@@ -4,8 +4,8 @@ dojoConfig = {
   async: true,
   parseOnLoad: true,
   packages: [
-    { name: "put-selector", location: "/support/put-selector" },
-    { name: "widgets", location: "/support/widgets" },
+    { name: "put-selector", location: "./support/put-selector" },
+    { name: "widgets", location: "./support/widgets" },
     { name: "application", location: package_path + "/js/application", main: "main" },
     { name: "boilerplate", location: package_path + "/js/boilerplate", main: "Boilerplate" },
     { name: "config", location: package_path + "/config" }
