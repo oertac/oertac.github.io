@@ -6,11 +6,9 @@ This sample demonstrates how to create an animated tour of the slides in a WebSc
 
 [View the German Version live](https://oertac.github.io/3D-Slidetour)
 
-[View the Original sample live]
-
 ## Instructions
 
-Please visit the original developer page from Esri for the Instructions: (https://developers.arcgis.com/javascript/latest/sample-code/webscene-slide-tour/index.html) 
+Please visit Esri's Developers ArcGIS site for the Instructions: (https://developers.arcgis.com/javascript/latest/sample-code/webscene-slide-tour/index.html) 
 
 ## Disclaimer
 
