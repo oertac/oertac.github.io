@@ -261,7 +261,7 @@ define([
                     this.sliderDomNode = domCtr.create("div", {}, filterAreaWrapper);
 
                     if (min === max) {
-                        alert("No area range can be displayed because there is only one feature filtered.");
+                        console.log("No area range can be displayed because there is only one feature filtered.");
 
                     } else {
 
