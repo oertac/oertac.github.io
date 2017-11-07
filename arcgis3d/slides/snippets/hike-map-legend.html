@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Hike Map</title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .esri-legend {
+      right: 15px;
+      top: 15px;
+      max-height: 90%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+
+  <script src="https://js.arcgis.com/4.5/"></script>
+
+  <script>
+    require([
+      "esri/WebMap",
+      "esri/views/MapView",
+
+      "esri/widgets/Legend",
+
+      "dojo/domReady!"
+    ], function (
+      WebMap, MapView,
+      Legend
+    ) {
+
+        var map = new WebMap({
+          portalItem: {
+            id: "d721eb35a09747e4a1aa8bcd491d9ecc"
+          }
+        });
+
+        view = new MapView({
+          map: map,
+          container: "viewDiv"
+        });
+
+        var legend = new Legend({ view: view });
+        view.ui.add(legend);
+
+      });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>

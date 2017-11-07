@@ -1,0 +1,15 @@
+{
+  "name": "eudevsummit2017-speedgeeking-3dwithesrijs",
+  "version": "1.0.0",
+  "description": "Speedgeeking presentation done at Esri European Devsummit 2017 in Berlin.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gutierrezj/eudevsummit2017.git"
+  },
+  "author": "Javier Gutierrez (javier_gutierrez@esri.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gutierrezj/eudevsummit2017/issues"
+  },
+  "homepage": "https://gutierrezj.github.io/eudevsummit2017/"
+}

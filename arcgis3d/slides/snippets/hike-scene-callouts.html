@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Hike Scene</title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .esri-legend {
+      right: 15px;
+      top: 15px;
+      max-height: 90%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+
+  <script src="https://js.arcgis.com/4.5/"></script>
+
+  <script>
+    require([
+      "esri/WebScene",
+      "esri/views/SceneView",
+
+      "esri/widgets/Legend",
+
+      "dojo/domReady!"
+    ], function (
+      WebScene, SceneView,
+      Legend
+    ) {
+
+        var map = new WebScene({
+          portalItem: {
+            id: "5682cd69fe5c451d8924d38d6cc918d4"
+          }
+        });
+
+        view = new SceneView({
+          map: map,
+          container: "viewDiv",
+          popup: {
+            dockOptions: {
+              position: "bottom-left"
+            }
+          }
+        });
+
+        var legend = new Legend({ view: view });
+        view.ui.add(legend);
+
+        view.then(() => {
+          map.ground = "world-elevation";
+
+          // use goTo for moving camera
+          view.goTo({
+
+            // console: JSON.stringify(view.camera.toJSON())
+            tilt: 60,
+            heading: 78,
+            position: {
+              x: 1108833,
+              y: 5917218,
+              z: 5432,
+              spatialReference: { wkid: 3857 }
+            }
+          });
+
+          var poiLayer = map.layers.find(l => l.title === "POI");
+          poiLayer.elevationInfo = { mode: "relative-to-scene" };
+
+          addCalloutsToPoiLayer(poiLayer);
+
+        });
+
+      });
+
+    function addCalloutsToPoiLayer(layer) {
+      var verticalOffset = {
+        screenLength: 30,
+        maxWorldLength: 300,
+        minWorldLength: 20
+      };
+      var callout = {
+        type: "line",  // autocasts as new LineCallout3D()
+        size: 0.6,
+        color: [25, 25, 25]
+      }
+      require(["esri/renderers/UniqueValueRenderer"], UniqueValueRenderer => {
+
+        layer.renderer = new UniqueValueRenderer({
+
+          field: layer.renderer.field,
+
+          uniqueValueInfos: [{
+            value: "Entscheidungspunkt",
+            label: "Decision point",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [{
+                type: "icon",
+                size: 11.25,
+                resource: { primitive: "circle" },
+                material: { color: [237, 81, 81] },
+                outline: { color: [25,25,25], size: 0.5}
+              }],
+              verticalOffset: verticalOffset,
+              callout: callout
+            }
+          },
+          {
+            value: "SAC Silvretta",
+            label: "Silvretta Hut",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [{
+                type: "icon",
+                size: 11.25,
+                resource: { primitive: "circle" },
+                material: { color: [20, 158, 206] },
+                outline: { color: [25,25,25], size: 0.5}
+              }],
+              verticalOffset: verticalOffset,
+              callout: callout
+            }
+          },
+          {
+            value: "Sardasca:Taxi-Punkt",
+            label: "Sardasca Taxi",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [{
+                type: "icon",
+                size: 11.25,
+                resource: { primitive: "circle" },
+                material: { color: [167, 198, 54] },
+                outline: { color: [25,25,25], size: 0.5}
+              }],
+              verticalOffset: verticalOffset,
+              callout: callout
+            }
+          }]
+        });
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>

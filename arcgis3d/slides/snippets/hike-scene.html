@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Hike Scene</title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .esri-legend {
+      right: 15px;
+      top: 15px;
+      max-height: 90%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+
+  <script src="https://js.arcgis.com/4.5/"></script>
+
+  <script>
+    require([
+      "esri/WebScene",
+      "esri/views/SceneView",
+
+      "esri/widgets/Legend",
+
+      "dojo/domReady!"
+    ], function (
+      WebScene, SceneView,
+      Legend
+    ) {
+
+        var map = new WebScene({
+          portalItem: {
+            id: "5682cd69fe5c451d8924d38d6cc918d4"
+          }
+        });
+
+        view = new SceneView({
+          map: map,
+          container: "viewDiv",
+          popup:{
+            dockOptions:{
+              position: "bottom-left"
+            }
+          }
+        });
+
+        var legend = new Legend({ view: view });
+        view.ui.add(legend);
+
+      });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
