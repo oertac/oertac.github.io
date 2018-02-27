@@ -3,7 +3,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/A99-slides/img/A99_3D_WebApp.png)
 
-This 3D web application is a prototype for interactive 3D visualization using two different web platforms from Esri (ArcGIS Online) and Autodesk (A360) on the web based ArcGIS Javascript API. The application visualizes a Building Information Modeling (BIM) project by combining 3D Web Viewer from ArcGIS Online and 3D Viwer from A360. The view on the right is the engineering view of the 3D object. 3D Web Scene on the left gives the context with all surrounding information in a 3D GIS.<br>
+This 3D web application is a prototype for interactive 3D visualization using two different web platforms from Esri (<a target="_blank" href="https://www.arcgis.com/home/index.html">ArcGIS Online</a>.) and Autodesk (A360) on the web based ArcGIS Javascript API. The application visualizes a Building Information Modeling (BIM) project by combining 3D Web Viewer from ArcGIS Online and 3D Viwer from A360. The view on the right is the engineering view of the 3D object. 3D Web Scene on the left gives the context with all surrounding information in a 3D GIS.<br>
 
 <a target="_blank" href="https://oertac.github.io/A99-slides/">View the 3D Web App live</a>.
 
