@@ -22,12 +22,11 @@ This demo is not maintained. There is no support available for deployment or dev
 
 Based on the BAB A99 BIM and GIS Pilot Project.
 
-Client: SSF Ingenieure AG in cooperation with Autobahndirektion Südbayern<br>
-Project leader: SSF Ingenieure AG<br>
-Project execution: SSF Ingenieure AG<br>
-Prof. Schaller UmweltConsult GmbH<br>
-Project partner: Esri Deutschland GmbH<br>
-Project period: 2016-
+<b>Client:</b> SSF Ingenieure AG in cooperation with Autobahndirektion Südbayern<br>
+<b>Project leader:</b> SSF Ingenieure AG<br>
+<b>Project execution:</b> SSF Ingenieure AG, Prof. Schaller UmweltConsult GmbH<br>
+<b>Project partner:</b> Esri Deutschland GmbH<br>
+<b>Project period:</b> 2016-
 
 Click <a target="blank" href="http://psu-schaller.de/BAB-A99-BIM-und-GIS-Pilotprojekt,263 ">here</a> for more information.  
 
