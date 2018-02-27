@@ -1,4 +1,5 @@
-# Prototype 3D Web App: Esri ArcGIS Online and Autodesk A360 in a single 3D web app!
+# Prototype 3D Web App: 
+## Esri ArcGIS Online and Autodesk A360 in a single 3D web app!
 
 ![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/A99-slides/img/A99_3D_WebApp.png)
 
@@ -10,7 +11,7 @@ Its purpose is to give access to the code base and to show how the application w
 
 It's not an officially supported workflow, but with the help of <a target="_blank" href="https://blogs.esri.com/esri/arcgis/2017/04/12/c-through-a-prototype-for-interactive-3d-urban-planning-analysis-on-the-web/">the strategic alliance between Esri and Autodesk</a>, we're hoping to have standard interfaces between these web platforms.
 
-# Project Details
+## Project Details
 Purpose of the project is an eight-lane expansion of highway A99 between interchange Munich North and the junction Haar with a length of 18.6 km. Besides renovation of bridges and superstructure also noise abatement measures are planned.
 
 The focus of this pilot project are future requirements for a frictionless information sharing between engineers and environmental planners, to optimize all required environmental concerns from the start of planning via project implementation through to completion and to monitor the environmental measures.
