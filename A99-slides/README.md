@@ -1,4 +1,4 @@
-# Prototype 3D Web App: 
+# Prototype 3D Web App 
 ## Esri ArcGIS Online and Autodesk A360 in a single 3D web app!
 
 ![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/A99-slides/img/A99_3D_WebApp.png)
