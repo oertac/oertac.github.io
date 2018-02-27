@@ -4,7 +4,7 @@
 
 This 3D web application is a prototype for interactive 3D visualization using two different web platforms from Esri (ArcGIS Online) and Autodesk (A360) on the web based ArcGIS Javascript API. The application visualizes a Building Information Modeling (BIM) project by combining 3D Web Viewer from ArcGIS Online and 3D Viwer from A360. The view on the right is the engineering view of the 3D object. 3D Web Scene on the left gives the context with all surrounding information in a 3D GIS.<br>
 
-<a target="_blank" href="https://oertac.github.io/A99-slides/">View the 3D Web App live</a> for more information.
+<a target="_blank" href="https://oertac.github.io/A99-slides/">View the 3D Web App live</a>.
 
 Its purpose is to give access to the code base and to show how the application was implemented with the ArcGIS Javascript API and HTML. To learn more about the background and data processing as well as details and challenges about the implementation, review the <a target="_blank" href="https://blogs.esri.com/esri/arcgis/2017/04/12/c-through-a-prototype-for-interactive-3d-urban-planning-analysis-on-the-web/">samples</a> in https://developers.arcgis.com.
 
@@ -29,7 +29,7 @@ Based on the BAB A99 BIM and GIS Pilot Project.
 <b>Project partner:</b> Esri Deutschland GmbH<br>
 <b>Project period:</b> 2016-
 
-Click <a target="_blank" href="http://psu-schaller.de/BAB-A99-BIM-und-GIS-Pilotprojekt,263 ">here</a> for more information.  
+Click <a href="http://psu-schaller.de/BAB-A99-BIM-und-GIS-Pilotprojekt,263" target="_blank">here</a> for more information.  
 
 
 ## Credits
