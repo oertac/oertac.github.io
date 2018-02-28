@@ -7,9 +7,9 @@ This 3D web application is a prototype for interactive 3D visualization using tw
 
 <a target="_blank" href="https://oertac.github.io/A99-slides/">View the 3D Web App live</a>.
 
-Its purpose is to give access to the code base and to show how the application was implemented with the ArcGIS Javascript API and HTML. To learn more about the background and data processing as well as details and challenges about the implementation, review the <a target="_blank" href="https://blogs.esri.com/esri/arcgis/2017/04/12/c-through-a-prototype-for-interactive-3d-urban-planning-analysis-on-the-web/">samples</a> in https://developers.arcgis.com.
+Its purpose is to give access to the code base and to show how the application was implemented with the ArcGIS Javascript API and HTML. To learn more about the background and data processing as well as details and challenges about the implementation, review the <a target="_blank" href="https://developers.arcgis.com/javascript/latest/sample-code/index.html">samples</a> in https://developers.arcgis.com.
 
-It's not an officially supported workflow, but with the help of <a target="_blank" href="https://blogs.esri.com/esri/arcgis/2017/04/12/c-through-a-prototype-for-interactive-3d-urban-planning-analysis-on-the-web/">the strategic alliance between Esri and Autodesk</a>, we're hoping to have standard interfaces between these web platforms.
+It's not an officially supported workflow, but with the help of <a target="_blank" href="http://www.esri.com/landing-pages/autodesk-esri-strategic-alliance">the strategic alliance between Esri and Autodesk</a>, we're hoping to have standard interfaces between these web platforms.
 
 ## Project Details
 Purpose of the project is an eight-lane expansion of highway A99 between interchange Munich North and the junction Haar with a length of 18.6 km. Besides renovation of bridges and superstructure also noise abatement measures are planned.
