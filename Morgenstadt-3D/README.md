@@ -1,10 +1,10 @@
-# Web scene - slide tour
+# Web Scene - slide tour sample with MorgenStadt Project
 
 ![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/3D-Slidetour/img/webscene_slides.png)
 
 This sample demonstrates how to create an animated tour of the slides in a WebScene by using the applyTo() method. applyTo() returns a promise that resolves after the slide has been applied to the view. By chaining the applyTo() method of the slides, we can play through all the slides without user input.
 
-[View this sample live](https://oertac.github.io/3D-Slidetour)
+[View this sample live](https://oertac.github.io/Morgenstadt-3D/)
 
 ## Instructions
 
