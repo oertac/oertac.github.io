@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>BIM & 3D GIS</title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    #createSlideDiv {
+      background-color: white;
+      opacity: 0.9;
+      color: black;
+      padding: 6px;
+    }
+
+    #slidesDiv {
+      background-color: white;
+      opacity: 0.9;
+      color: black;
+      padding: 10px;
+      visibility: hidden;
+      bottom: 20px;
+      overflow-y: auto;
+      text-align: center;
+      height: 260px;
+    }
+
+    #slidesDiv .slide {
+      /* Show cursor as pointer when on a slide */
+      cursor: pointer;
+      margin-bottom: 6px;
+    }
+
+    #slidesDiv .slide .title {
+      /* Center the title text */
+      text-align: center;
+    }
+
+    /* Draw active slide with a nice border around the thumbnail */
+
+    #slidesDiv .slide.active img {
+      box-shadow: 0px 0px 12px black;
+      border-style: solid;
+      border-width: thin;
+      border-color: black;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.6/"></script>
+
+  <script>
+    require([
+      "esri/views/SceneView",
+      "esri/WebScene",
+      "esri/webscene/Slide",
+      "dojo/dom-construct",
+      "dojo/dom-class",
+      "dojo/dom",
+      "dojo/on",
+      "dojo/query",
+      "dojo/domReady!"
+    ], function(
+      SceneView, WebScene, Slide, domConstruct, domClass, dom, on, query
+    ) {
+
+      /*********************************************************************
+       * Create a new WebScene referencing a WebScene ID from ArcGIS Online
+       * or an on-premise portal.
+       *********************************************************************/
+      var scene = new WebScene({
+        portalItem: { // autocasts as new PortalItem()
+          id: "7e5a0ee653f9412c93cae460b97b76b7"
+        }
+      });
+
+      /*********************************************************************
+       * Reference the WebScene in a SceneView instance.
+       *********************************************************************/
+      var view = new SceneView({
+        map: scene,
+        container: "viewDiv"
+      });
+
+      view.ui.add(["createSlideDiv", "slidesDiv"], "top-right");
+
+      /*********************************************************************
+       * Function to create the UI for a slide by creating DOM nodes and
+       * adding them to the slidesDiv container.
+       *********************************************************************/
+      function createSlideUI(slide, placement) {
+        /*********************************************************************
+         * Create a new <div> element which contains all the slide information.
+         * Store a reference to the created DOM node so we can use it to place
+         * other DOM nodes and connect events.
+         *********************************************************************/
+        var slideElement = domConstruct.create("div", {
+          // Assign the ID of the slide to the <span> element
+          id: slide.id,
+          className: "slide"
+        });
+
+        /*********************************************************************
+         * Place the newly created DOM node at the beginning of the slidesDiv
+         *********************************************************************/
+        var position = placement ? placement : "last";
+        domConstruct.place(slideElement, "slidesDiv", position);
+
+        /*********************************************************************
+         * Create a <div> element to contain the slide title text
+         *********************************************************************/
+        domConstruct.create("div", {
+          // Place the title of the slide in the <div> element
+          textContent: slide.title.text,
+          className: "title"
+        }, slideElement);
+
+        /*********************************************************************
+         * Create a new <img> element and place it inside the newly created slide
+         * element. This will reference the thumbnail from the slide.
+         *********************************************************************/
+        domConstruct.create("img", {
+          // Set the src URL of the image to the thumbnail URL of the slide
+          src: slide.thumbnail.url,
+
+          // Set the title property of the image to the title of the slide
+          title: slide.title.text
+        }, slideElement); // Place the image inside the new <div> element
+
+        /*********************************************************************
+         * Set up a click event handler on the newly created slide. When clicked,
+         * the code defined below will execute.
+         *********************************************************************/
+        on(slideElement, "click", function() {
+          /*******************************************************************
+           * Remove the "active" class from all elements with the .slide class
+           *******************************************************************/
+          query(".slide").forEach(function(node) {
+            domClass.remove(node, "active");
+          });
+
+          /*******************************************************************
+           * Add the "active" class on the current element being selected
+           *******************************************************************/
+          domClass.add(slideElement, "active");
+
+          /******************************************************************
+           * Applies a slide's settings to the SceneView.
+           *
+           * Each slide has a viewpoint and visibleLayers property that define
+           * the point of view or camera for the slide and the layers that should
+           * be visible to the user when the slide is selected. This method
+           * allows the user to animate to the given slide's viewpoint and turn
+           * on its visible layers and basemap layers in the view.
+           ******************************************************************/
+          slide.applyTo(view);
+        });
+      }
+
+      view.when(function() {
+        /*********************************************************************
+         * The slides will be placed in the 'slidesDiv' <div> element.
+         *********************************************************************/
+        dom.byId("slidesDiv").style.visibility = "visible";
+
+        /*********************************************************************
+         * The slides are a collection inside the presentation property of
+         * the WebScene.
+         *********************************************************************/
+        var slides = scene.presentation.slides;
+
+        /*********************************************************************
+         * Loop through each slide in the collection and render the slide
+         *********************************************************************/
+        slides.forEach(createSlideUI);
+
+        /*********************************************************************
+         * Create a new slide using Slide.createFrom after clicking on the
+         * create slide button, using the text from the title input for the
+         * title of the slide.
+         *********************************************************************/
+        on(dom.byId("createSlideButton"), "click", function() {
+          /*******************************************************************
+           * Use the Slide.createFrom static method to create a new slide which
+           * contains a snapshot (visible layers, basemap, camera) of the
+           * current view. This method returns a Promise which resolves with a
+           * new Slide instance once the slide as been successfully created.
+           *******************************************************************/
+          Slide.createFrom(view).then(function(slide) {
+            /*****************************************************************
+             * Set the slide title
+             *****************************************************************/
+            slide.title.text = dom.byId("createSlideTitleInput")
+              .value;
+
+            /*****************************************************************
+             * Add the slide to the slides collection of the scene presentation
+             * such that if the scene were to published back to the portal, the
+             * newly created slide would be correctly persisted as part of the
+             * WebScene
+             *****************************************************************/
+            scene.presentation.slides.add(slide);
+
+            /*****************************************************************
+             * Create UI for the slide and present it to the user
+             *****************************************************************/
+            createSlideUI(slide, "first");
+          });
+        });
+      });
+
+    });
+  </script>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #view2Div {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="viewDiv" style="float: left; width: 50%; height: 100%;"></div>
+  <div id="view2Div"> <iframe src="https://myhub.autodesk360.com/ue2b7f9f7/shares/public/SHabee1QT1a327cf2b7a992bbbb5a71c048f?mode=embed" width= 50% height= 100% allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0" ></iframe> </div>
+  
+  <div id="createSlideDiv">
+    New slide: <input type="text" id="createSlideTitleInput" size="10" />
+    <button
+      id="createSlideButton">Create</button>
+  </div>
+  <div id="slidesDiv"></div>
+</body>
+
+</html>
