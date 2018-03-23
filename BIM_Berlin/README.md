@@ -22,10 +22,10 @@ This demo is not maintained. There is no support available for deployment or dev
 
 ## What's in this scene?
 
-Terrain: Includes a global 3D terrain layer to provide elevation context.  Your layers are placed in relationship to this terrain<br>
-Basemap: Includes one of the ArcGIS Basemaps regularly used in in your mapping work<br>
-Scene Layers: Includes a layer of 3D buildings to help understand your data within the context of the built environment.  The layer is a file type optimized for rendering in 3D.<br>
-IFC Model: <a target="_blank" href="http://www.nibs.org/?page=bsa_commonbimfiles">Common Building Information Model Files</a> from buildingSMART Alliance
+<b>Terrain:</b> Includes a global 3D terrain layer to provide elevation context.  Your layers are placed in relationship to this terrain<br>
+<b>Basemap:</b> Includes one of the ArcGIS Basemaps regularly used in in your mapping work<br>
+<b>Scene Layers:</b> Includes a layer of 3D buildings to help understand your data within the context of the built environment.  The layer is a file type optimized for rendering in 3D.<br>
+<b>IFC Model:</b> <a target="_blank" href="http://www.nibs.org/?page=bsa_commonbimfiles">Common Building Information Model Files</a> from buildingSMART Alliance
 
 ## Credits
 Copyright 2018 Esri Deutschland GmbH
