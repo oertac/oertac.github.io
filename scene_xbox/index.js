@@ -63,7 +63,7 @@ require(
             'use strict';
 
             // Default web scene
-            var DEFAULT = '2449097b469f41a0b443b05a7e8d3959';
+            var DEFAULT = '87aca5467a2744ac90728027a3cd9d51';
 
             // These constants dictate the speed of angular and linear motion. Adjust as necessary.
             var ANGULAR_RATIO = 4;
