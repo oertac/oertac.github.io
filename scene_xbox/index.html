@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Copyright 2017 Esri
+
+        Licensed under the Apache License, Version 2.0 (the 'License');
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at:
+        https://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an 'AS IS' BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+    -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-10866840-39'></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-10866840-39');
+    </script>
+    <title>Gamepad Integration</title>
+    <meta http-equiv='content-type' content='text/html;charset=utf-8' />
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name='author' content='Esri' />
+    <meta name='keywords' content='xbox integration 3d javascript fly navigation mouse gamepad' />
+    <meta name='description' content='An example of adding support for xbox controller for 3d navigation.' />
+    <meta name='robots' content='index,follow' />
+    <link rel='shortcut icon' type='image/ico' href='img/favicon.ico'>
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css'>
+    <link type='text/css' rel='stylesheet' href='css/open-iconic.min.css'>
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/4.6/esri/css/main.css' />
+    <link type='text/css' rel='stylesheet' href='index.css' />
+    <script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+    <script type='text/javascript' src='js/popper.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='//js.arcgis.com/4.6/'></script>
+    <script type='text/javascript' src='index.js'></script>
+</head>
+<body>
+    <div id='map'></div>
+    <div id='target'></div>
+    <a id='logo-esri' target='_blank' href='https://www.esri.com'><img src='img/esri-white.png' height='53' /></a>
+    <div id='map-buttons'>
+        <div id='button-help' class='rc-map-button' data-toggle='modal' data-target='#modal-help'>
+            <span class='oi' data-glyph='cog' title='Help' aria-hidden='true'></span>
+        </div>
+        <div id='button-about' class='rc-map-button' data-toggle='modal' data-target='#modal-about'>
+            <span class='oi' data-glyph='info' title='About' aria-hidden='true'></span>
+        </div>
+    </div>
+    <div class='modal fade' id='modal-help' tabindex='-1' role='dialog' aria-labelledby='label1' aria-hidden='true'>
+        <div class='modal-dialog modal-lg' role='document'>
+            <div class='modal-content rc-modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='label1'>Controls</h4>
+                </div>
+                <div class='modal-body rc-help'>
+                    <img src='img/layout.png' />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='modal-about' tabindex='-1' role='dialog' aria-labelledby='label2' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+            <div class='modal-content rc-modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='label2'>About this App</h4>
+                </div>
+                <div class='modal-body'>
+                    <p><img class='rc-center' src='img/esri-black.png' height='43' /></p>
+                    <p>This application was designed and developed by <a target='_blank' href='https://www.esri.com/'>Esri</a>'s <a target='_blank' href='https://geonet.esri.com/groups/applications-prototype-lab'>Applications Prototype Lab</a> in Redlands, California. The source code is available <a target='_blank' href='https://github.com/richiecarmichael/Esri-Gamepad'>here</a>.</p>
+                    <p>
+                        The application was built using the following technologies:
+                        <ul style='margin-left: -20px;'>
+                            <li><a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for JavaScript</a> by <a target='_blank' href='https://www.esri.com'>Esri</a></li>
+                            <li><a target='_blank' href='https://getbootstrap.com/'>Bootstrap</a> by <a target='_blank' href='https://twitter.com/'>Twitter Inc.</a></li>
+                            <li><a target='_blank' href='https://jquery.com/'>jQuery</a> by the jQuery Foundation Inc.</li>
+                            <li><a target='_blank' href='https://useiconic.com/open'>Open Iconic</a> by <a target='_blank' href='https://github.com/iconic'>Iconic.</a></li>
+                            <li><a target='_blank' href='https://popper.js.org/'>Popper.js</a> by <a target='_blank' href='https://github.com/FezVrasta'>Federico Zivolo</a></li> 
+                        </ul>
+                    </p>
+                    <p>For more information on Gamepad specification please visit: <a target='_blank' href='https://w3c.github.io/gamepad/'>W3C</a> and <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API'>MDN</a>. The author also acknowledges <a target='_blank' href='https://github.com/luser/gamepadtest'>this</a> developer sample.</p>
+                    <p>By default, the app uses a <a target='_blank' href='https://www.arcgis.com/home/item.html?id=53d44be1fd7443a99cf0fbf7d95a2365'>San Francisco webscene</a>. To open an alternative web scene construct the following url:<br />
+                        <span style='font-size:12px;'>https://maps.esri.com/rc/gamepad/index.html?webscene=<span style='color:red;'>2449097b469f41a0b443b05a7e8d3959</span></span><br />
+                        <span style='font-size:12px;'>where <span style='color:red;font-style:italic;'>2449097b469f41a0b443b05a7e8d3959</span> is the id of a public webscene.</span>
+                    </p>
+                    <p>It is recommended to wait ten seconds for the web scene to load before manipulating the game controller. If loading prematurely ceases, refresh the browser. If the camera spontaneously creeps or rotates, press the <b>start</b> button to reset the controller.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
