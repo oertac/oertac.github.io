@@ -1,7 +1,7 @@
 # Web App for Swiping 3D Web Scenes
 ## Display 2 different Web Scenes from Esri ArcGIS Online in a single 3D web app!
 
-![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/swipe-3D/img/swipe_3D_scenes.gif)
+![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/swipe-3D/images/swipe_3D_scenes.gif)
 
 This is a prototype 3D web application to visualize two different web scenes from the same location to compare current situation against the design.<br>
 
