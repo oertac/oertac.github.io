@@ -9,6 +9,11 @@ This is a prototype 3D web application to visualize two different web scenes fro
 
 Its purpose is to give access to the code base and to show how the application was implemented with the ArcGIS Javascript API and HTML. To learn more about the background and data processing as well as details and challenges about the implementation, review the <a target="_blank" href="https://developers.arcgis.com/javascript/latest/sample-code/index.html">samples</a> in https://developers.arcgis.com.
 
+## How to configure this app:
+
+Simply fork and add your own Webscenes. To add your own scenes open main.js (.../app/main.js):<br>
+![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/swipe-3D/images/add_webscene.png)
+
 ## Disclaimer
 
 This demo is not maintained. There is no support available for deployment or development of the application.
