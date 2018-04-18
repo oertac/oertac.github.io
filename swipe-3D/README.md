@@ -17,7 +17,7 @@ This demo is not maintained. There is no support available for deployment or dev
 
 Based on the source code from <a target="_blank" href="https://github.com/RalucaNicola">Raluca Nicola</a>. Thanks Raluca for the amazing idea!
 
-Copyright 2018 Esri Deutschland GmbH
+Copyright 2018 Esri Deutschland GmbH<br>
 Copyright 2018 Prof. Schaller UmweltConsult GmbH
 
 ## Data Source
