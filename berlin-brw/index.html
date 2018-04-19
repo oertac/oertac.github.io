@@ -4,21 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Berlin BRW (Land Value) Data-driven extrusion</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.js"></script>
   <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+  <link href="css/style.css" rel="stylesheet" />
   <script src="https://js.arcgis.com/4.6/"></script>
-
-  <style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-    }
-  </style>
-
   <script>
     require([
       "esri/Map",
@@ -27,11 +18,13 @@
       "esri/widgets/Legend",
       "dojo/on",
       "dojo/dom",
+      "dojox/widget/Standby",
+      "dojo/domReady!",
       "esri/tasks/support/Query",
       "esri/tasks/QueryTask",
       "dojo/domReady!"
     ], function(
-      Map, SceneView, FeatureLayer, Legend, on, dom, Query, QueryTask
+      Map, SceneView, FeatureLayer, Legend, on, dom, Standby, Query, QueryTask
     ) {
 
 
@@ -70,25 +63,35 @@
           },
           {
             value: 1000,
-            size: 2000,
+            size: 1000,
             label: ">5,000"
           },
           {
             value: 5000,
-            size: 10000,
+            size: 5000,
             label: ">5,000"
           },
           {
             value: 10000,
-            size: 30000,
+            size: 10000,
             label: ">10,000"
+          },
+          {
+            value: 20000,
+            size: 20000,
+            label: ">20,000"
+          },
+          {
+            value: 40000,
+            size: 40000,
+            label: ">40,000"
           }]
         }, {
           type: "color",
           field: "BRW",
           //normalizationField: "TOTPOP_CY",
           legendOptions: {
-            title: "BRW Value"
+            title: "Bodenrichtwert [€]"
           },
           stops: [
           {
@@ -113,17 +116,17 @@
           }]
         }]
       };
-
+      //here come the spinner:
       var povLyr = new FeatureLayer({
         url: "https://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/bodenrichtwerte/FeatureServer/0/",
         renderer: renderer,
-        definitionExpression: "STICHTAG = '2011/01/01'",
+        definitionExpression: "STICHTAG = '2018/01/01'",
         visible: true,
-        title: "Berlin BRW",
+        title: "räumliche Einheiten",
         outFields: ["*"],
         popupTemplate: { // autocasts as new PopupTemplate()
           title: "{BEZIRK}, {STICHTAG}",
-          content: "BRW von {BEZIRK} zum {STICHTAG} ist <b>{BRW}</b> Euro pro m2.",
+          content: "BRW im {BEZIRK} zum {STICHTAG} ist hier <b>{BRW}</b> Euro pro m2.",
           fieldInfos: [
           {
             fieldName: "BEZIRK",
@@ -144,14 +147,22 @@
         basemap: "gray",
         layers: [povLyr]
       });
-      var yearSlider = dom.byId("year");
-      on(yearSlider, "input", function() {
-        year = yearSlider.value;
-        dom.byId("year-value").innerText = year;
-        povLyr.definitionExpression = "STICHTAG = '" + year + "/01/01'";
-        povLyr.refresh();
+      var slidervar = document.getElementById('slider');
+      noUiSlider.create(slidervar, {
+        start: [ 2018 ],
+        step: 1,
+        tooltips: [ wNumb({ decimals: 0 }) ],
+        range: {
+          min: 2002,
+          max: 2018
+        }
       });
 
+      slidervar.noUiSlider.on('change', function( values, handle ) {
+        year = values[handle];
+        povLyr.definitionExpression = "STICHTAG = '" + parseInt(year) + "/01/01'";
+
+      })
       var view = new SceneView({
         container: "viewDiv",
         map: map,
@@ -165,27 +176,27 @@
           heading: 10
         }
       });
-
       var legend = new Legend({
         view: view
       });
-
+      view.whenLayerView(povLyr).then(function (lyrView) {
+        document.getElementById("spinner").style.visibility = "hidden";
+        lyrView.watch("updating", function (val) {
+          if (val == true){
+            document.getElementById("spinner").style.visibility = "visible";
+          } else {
+            document.getElementById("spinner").style.visibility = "hidden";
+          }
+        })
+      })
       view.ui.add(legend, "bottom-right");
-      view.ui.add(dom.byId("infoDiv"), {
-        position: "top-left",
-        index: 0
-      });
     });
   </script>
 </head>
 
 <body>
   <div id="viewDiv"></div>
-  <div id="infoDiv">
-    Year: <input id="year" type="range" min="2002.0"
-        max="2018.0" step="1" value="2018.0">
-      <span id="year-value">2018</span>
-  </div>
+  <div id="slider"></div>
+  <div id="spinner" class="spinner"></div>
 </body>
-
 </html>
