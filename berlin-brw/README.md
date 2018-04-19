@@ -1,11 +1,11 @@
 # Berlin Bodenrichtwerte (Land Value) 2015 in 3D
 ## Display originally 2D Berlin BRW (Land Value) Data in 3D with data-driven extrusion!
 
-![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/swipe-3D/images/swipe_3D_scenes.gif)
+![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/berlin-brw/img/berlin-brw.gif)
 
 This sample demonstrates how to apply a size visual variable to extrude features thematically based on a numeric field value. The same basic principles of working with size visual variables reviewed in the Visualize features thematically with a continuous size ramp sample also apply to 3D thematic visualizations.<br>
 
-<a target="_blank" href="https://oertac.github.io/berlin-brw">View this 3D Web App live</a>.
+<a target="_blank" href="https://oertac.github.io/berlin-brw/index.html">View this 3D Web App live</a>.
 
 Its purpose is to give access to the code base and to show how the application was implemented with the ArcGIS Javascript API and HTML. To learn more about the background and data processing as well as details and challenges about the implementation, review the <a target="_blank" href="https://developers.arcgis.com/javascript/latest/sample-code/index.html">samples</a> in https://developers.arcgis.com.
 
