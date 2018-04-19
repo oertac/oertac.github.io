@@ -25,12 +25,16 @@
       "esri/views/SceneView",
       "esri/layers/FeatureLayer",
       "esri/widgets/Legend",
+      "dojo/on",
+      "dojo/dom",
+      "esri/tasks/support/Query",
+      "esri/tasks/QueryTask",
       "dojo/domReady!"
     ], function(
-      Map, SceneView, FeatureLayer, Legend
+      Map, SceneView, FeatureLayer, Legend, on, dom, Query, QueryTask
     ) {
 
-      
+
 
       /*****************************************************************
        * In this case we set two visual variables on the renderer. Since
@@ -111,34 +115,41 @@
       };
 
       var povLyr = new FeatureLayer({
-        url: "https://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/Berlin_Bodenrichtwerte/FeatureServer/0",
+        url: "https://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/bodenrichtwerte/FeatureServer/0/",
         renderer: renderer,
+        definitionExpression: "STICHTAG = '2011/01/01'",
+        visible: true,
         title: "Berlin BRW",
         outFields: ["*"],
         popupTemplate: { // autocasts as new PopupTemplate()
-          title: "{GEMEINDE}, {BEZIRK}",
-          content: "BRW von {BEZIRK} ist <b>{BRW}</b> Euro pro m2.",
+          title: "{BEZIRK}, {STICHTAG}",
+          content: "BRW von {BEZIRK} zum {STICHTAG} ist <b>{BRW}</b> Euro pro m2.",
           fieldInfos: [
           {
-            fieldName: "GEMEINDE",
-            format: {
-              digitSeparator: true,
-              places: 0
-            }
-          }, {
             fieldName: "BEZIRK",
             format: {
               digitSeparator: true,
               places: 0
             }
+          },
+          {
+            fieldName: "STICHTAG"
           }]
         },
-        
+
       });
+
 
       var map = new Map({
         basemap: "gray",
         layers: [povLyr]
+      });
+      var yearSlider = dom.byId("year");
+      on(yearSlider, "input", function() {
+        year = yearSlider.value;
+        dom.byId("year-value").innerText = year;
+        povLyr.definitionExpression = "STICHTAG = '" + year + "/01/01'";
+        povLyr.refresh();
       });
 
       var view = new SceneView({
@@ -160,13 +171,21 @@
       });
 
       view.ui.add(legend, "bottom-right");
-
+      view.ui.add(dom.byId("infoDiv"), {
+        position: "top-left",
+        index: 0
+      });
     });
   </script>
 </head>
 
 <body>
   <div id="viewDiv"></div>
+  <div id="infoDiv">
+    Year: <input id="year" type="range" min="2002.0"
+        max="2018.0" step="1" value="2018.0">
+      <span id="year-value">2018</span>
+  </div>
 </body>
 
 </html>
