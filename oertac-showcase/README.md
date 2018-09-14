@@ -19,5 +19,5 @@ preview here
 
 ## Copyright and License
 
-Based on [Blackrock Digital LLC.'s repo] (https://github.com/BlackrockDigital/startbootstrap-agency)
+Based on [Blackrock Digital LLC.'s repo](https://github.com/BlackrockDigital/startbootstrap-agency)
 Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-agency/blob/gh-pages/LICENSE) license.
