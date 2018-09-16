@@ -7,7 +7,7 @@ My online portfolio.
 preview here 
 [![Agency Preview](https://startbootstrap.com/assets/img/templates/agency.jpg)](https://blackrockdigital.github.io/startbootstrap-agency/)
 
-**[View Live Preview](https://oertac.github.io/oertac-showcase/)**
+**[View Live Preview](https://oertac.github.io/resume)**
 
 ## Status
 
