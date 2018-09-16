@@ -6,7 +6,7 @@ My online resume.
 
 ![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/resume/img/my_website.PNG)
 
-**[View Live Preview](https://oertac.github.io/resume)**
+**[View Live](https://oertac.github.io/resume)**
 
 ## Status
 
