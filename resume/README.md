@@ -1,11 +1,10 @@
 # My Portfolio
 
-My online portfolio.
+My online resume.
 
 ## Preview
 
-preview here 
-[![Agency Preview](https://startbootstrap.com/assets/img/templates/agency.jpg)](https://blackrockdigital.github.io/startbootstrap-agency/)
+![screenshot](https://raw.githubusercontent.com/oertac/oertac.github.io/master/resume/img/my_website.PNG)
 
 **[View Live Preview](https://oertac.github.io/resume)**
 
