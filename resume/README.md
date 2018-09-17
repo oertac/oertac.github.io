@@ -1,4 +1,4 @@
-# My Portfolio
+# Resume
 
 My online resume.
 
