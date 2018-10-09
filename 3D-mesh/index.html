@@ -3,54 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Load a basic web scene - 4.9</title>
+  <title>IntegratedMeshLayer - 4.9</title>
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
   <script src="https://js.arcgis.com/4.9/"></script>
-
-  <script>
-    require([
-      "esri/views/SceneView",
-      "esri/WebScene"
-    ], function(
-      SceneView, WebScene
-    ) {
-
-      var titleDiv = document.getElementById("titleDiv");
-
-      /************************************************************
-       * Creates a new WebScene instance. A WebScene must reference
-       * a PortalItem ID that represents a WebScene saved to
-       * arcgis.com or an on-premise portal.
-       *
-       * To load a WebScene from an on-premise portal, set the portal
-       * url with esriConfig.portalUrl.
-       ************************************************************/
-      var scene = new WebScene({
-        portalItem: { // autocasts as new PortalItem()
-          id: "f2bd6ac4542c4a68a7f2f3bc1b416bfe"
-        }
-      });
-
-      /************************************************************
-       * Set the WebScene instance to the map property in a SceneView.
-       ************************************************************/
-      var view = new SceneView({
-        map: scene,
-        container: "viewDiv",
-        padding: {
-          top: 40
-        }
-      });
-
-      view.when(function() {
-        // when the scene and view resolve, display the scene's
-        // title in the DOM
-        var title = scene.portalItem.title;
-        titleDiv.innerHTML = title;
-      });
-    });
-  </script>
 
   <style>
     html,
@@ -61,30 +17,62 @@
       height: 100%;
       width: 100%;
     }
-
-    #titleDiv {
-      background-color: lightgray;
-      color: black;
-      padding: 5px;
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      right: 0;
-      font-size: 20pt;
-      font-weight: bolder;
-      width: 100%;
-      height: 30px;
-      text-align: center;
-      opacity: 0.75;
-    }
   </style>
 
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/layers/IntegratedMeshLayer"
+      ],
+      function(
+        Map, SceneView,
+        IntegratedMeshLayer
+      ) {
+
+        /********************
+         * Create IntegratedMeshLayer layer
+         ********************/
+
+        var layer = new IntegratedMeshLayer({
+          url: "https://utility.arcgis.com/usrsvcs/servers/52568d30d38a416d906b017e5bddffbb/rest/services/etterschlag_mesh/SceneServer",
+          // Integrated Mesh data provided by Drone2Map
+          copyright: "Drone2Map"
+        });
+
+        /**************************
+         * Add IntegratedMeshLayer to map
+         *************************/
+
+        var map = new Map({
+          basemap: "satellite",
+          layers: [layer],
+          ground: "world-elevation"
+        });
+
+        var view = new SceneView({
+          container: "viewDiv",
+          map: map,
+          camera: {
+            position: {
+              x: 1246372.66,
+              y: 6120981.64,
+              z: 1446,
+              spatialReference: {
+                wkid: 3857
+              }
+            },
+            tilt: 84,
+            heading: 85
+          }
+        });
+
+      });
+  </script>
 </head>
 
 <body>
-  <div id="viewDiv">
-    <div id="titleDiv"></div>
-  </div>
+  <div id="viewDiv"></div>
 </body>
 
 </html>
