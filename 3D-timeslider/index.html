@@ -114,11 +114,11 @@
             infoDiv.innerHTML = slide.title.text;
 
             slide.applyTo(view, {
-              duration: 1000
+              duration: 2000
             }).then(function() {
               window.setTimeout(function() {
                 goToSlide(i + 1);
-              }, 1000);
+              }, 2000);
             });
           } else {
             // enable button when tour ends
