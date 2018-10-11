@@ -3,7 +3,7 @@
 
 This sample demonstrates how to create an animated tour of the slides in a WebScene by using the applyTo() method. applyTo() returns a promise that resolves after the slide has been applied to the view. By chaining the applyTo() method of the slides, we can play through all the slides without user input.
 
-[View this sample live](https://oertac.github.io/3D-timeslider)
+[View this sample live](https://oertac.github.io/3D-timeslider/)
 
 
 
