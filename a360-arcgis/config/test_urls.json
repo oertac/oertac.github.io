@@ -1,0 +1,40 @@
+{
+  "group_layers_to_models_NOUSE": [
+    {
+      "layer_title": "Business Center",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761ecace9a309fed8f4b?mode=embed&viewState=NoIgbgDAdAjCA0IIFNkBYDsyDGBDAtDMgKwz4BMAZrgJz7Ea4Ac%2BGlMMTblyTyAJiAC6QA"
+    },
+    {
+      "layer_title": "BC Building",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761ea7b8bf61175795e0?mode=embed&viewState=NoIgbgDAdAjCA0IBsBTAhgYwOwBYBmATALQxYDMKRSSARmUQBx4CcAJoxAKwQwGtcQkrEAF0gA"
+    },
+    {
+      "layer_title": "TC Building",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761e494735804b9aaa0b?mode=embed&viewState=NoIgbgDAdAjCA0IDMAWARgMzRAJmgtAJwBsA7KfgEwAcZ%2B1ApsQIb5Jo4CsaS1OllJJRABdIA"
+    },
+    {
+      "layer_title": "Security Administration Building",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761e5eb7a16488ca88e0?mode=embed&viewState=NoIgbgDAdAjCA0ICcBWATBAbBAxgFgFoBDTNFAnFHIglAIxQGYKYIiAzAdk8bTrpwgAukA"
+    },
+    {
+      "layer_title": "Pump station",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761ee8860cade0030e69?mode=embed&viewState=NoIgbgDAdAjCA0ICsBjAJgDgMwE5MFoYA2E-AdhQFMz8AjAJnoBZ8UsycBDCHMohpCAC6QA"
+    },
+    {
+      "layer_title": "ADSK Building",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761e6138c9643543f073?mode=embed&viewState=NoIgbgDAdAjCA0IAmBjAHATiQIwgVgFoYAzJGAtCDAdgICY6A2AU3uozubLyWL2pABdIA"
+    },
+    {
+      "layer_title": "Research Lab",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761efd925fcb62294900?mode=embed&viewState=NoIgbgDAdAjCA0IIHYYGMCsAjNWC0AhgBxb4EYDMReJMAnHlhEQCZEwAsAbBHSwEwgAukA"
+    },
+    {
+      "layer_title": "Office Park",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761e47d12a318e3c9402?mode=embed&viewState=NoIgbgDAdAjCA0IIwKYwCwDMBsKC0A7NjJntgCab7oCGAxuXgMwR0CcARjWwEwECsLEAF0gA"
+    },
+    {
+      "layer_title": "Bridge",
+      "model_url": "https://myhub.autodesk360.com/ue29f19b81/g/shares/SH7f1edQT22b515c761e9e9f4c31c64bc02e?mode=embed&viewState=NoIgbgDAdAjCA0IDGAjAhgVgCwRgMwFoB2CAZiwLP0pwgKxgE4YA2NFmAE04FMIQAukA"
+    }
+  ]
+}

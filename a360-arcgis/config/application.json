@@ -1,0 +1,25 @@
+{
+  "appid": "",
+  "title": "",
+  "webscene": "15fa21b86e094be5904f05d6503b39aa",
+  "portalUrl": "https://www.arcgis.com",
+  "oauthappid": "UZ1ZW7TUzsVjepEm",
+  "proxyUrl": "https://maps.esri.com/proxy/DotNet/proxy.ashx",
+  "units": "dual",
+  "helperServices": {
+    "geometry": {
+      "url": null
+    },
+    "printTask": {
+      "url": "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
+    },
+    "elevationSync": {
+      "url": null
+    },
+    "geocode": [
+      {
+        "url": null
+      }
+    ]
+  }
+}

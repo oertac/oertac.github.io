@@ -1,0 +1,34 @@
+{
+  "name": "@esri/application-base-js",
+  "version": "0.0.2",
+  "description": "A core class for creating a configurable application using JavaScript/TypeScript",
+  "author": "Matt Driscoll <mdriscoll@esri.com>",
+  "homepage": "https://github.com/Esri/application-base-js",
+  "license": "SEE LICENSE IN license.txt",
+  "main": "ApplicationBase.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esri/application-base-js.git"
+  },
+  "keywords": [
+    "Esri",
+    "esrijs",
+    "ArcGIS",
+    "gis",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^2.5.3",
+    "@types/arcgis-js-api": "^4.5.0",
+    "dojo-typings": "^1.11.9",
+    "tslint": "^5.7.0",
+    "dts-generator": "^2.1.0"
+  },
+  "scripts": {
+    "start": "npm run build; npm run watch -s",
+    "watch": "tsc --watch",
+    "build": "dts-generator --name ApplicationBase --project ./ --out index.d.ts"
+  }
+}

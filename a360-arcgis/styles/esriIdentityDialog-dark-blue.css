@@ -1,0 +1,101 @@
+
+.esriIdentityDialog {
+  /*border : none !important;*/
+}
+
+.esriIdentityDialog * {
+  outline : none;
+}
+
+.esriIdentityDialog .dijitTitlePaneTitle,
+.esriIdentityDialog .dijitTitlePaneTitleOpen {
+  color      : #68dbfd !important;
+  background : #242424 !important;
+}
+
+.esriIdentityDialog .dijitDialogTitleBar {
+  padding       : 5px !important;
+  background    : #242424;
+  border        : none;
+  border-bottom : solid 1px #68dbfd;
+}
+
+.esriIdentityDialog .dijitDialogTitle {
+  color : #fff;
+}
+
+.esriIdentityDialog .dijitDialogCloseIcon {
+  margin-top : 6px;
+  background : none;
+  color      : #68dbfd;
+  opacity    : 0.7;
+}
+
+.esriIdentityDialog .dijitDialogCloseIcon:hover {
+  color   : #68dbfd;
+  opacity : 1.0;
+}
+
+.esriIdentityDialog .dijitDialogPaneContent {
+  margin           : 0;
+  padding          : 0;
+  background       : #242424;
+  border-top-color : transparent;
+}
+
+.esriIdentityDialog .dijitDialogPaneContentArea {
+  margin  : 0 !important;
+  padding : 10px;
+}
+
+.esriIdentityDialog input:-webkit-autofill,
+.esriIdentityDialog input:-webkit-autofill:hover,
+.esriIdentityDialog input:-webkit-autofill:focus,
+.esriIdentityDialog input:-webkit-autofill,
+.esriIdentityDialog textarea:-webkit-autofill,
+.esriIdentityDialog textarea:-webkit-autofill:hover,
+.esriIdentityDialog textarea:-webkit-autofill:focus,
+.esriIdentityDialog select:-webkit-autofill,
+.esriIdentityDialog select:-webkit-autofill:hover,
+.esriIdentityDialog select:-webkit-autofill:focus,
+.esriIdentityDialog .dijitInputInner {
+  -webkit-text-fill-color : #68dbfd;
+  -webkit-box-shadow      : 0 0 0 1000px #333 inset;
+  color                   : #68dbfd !important;
+  background              : #333 !important;
+}
+
+.esriIdentityDialog .dijitDialogPaneActionBar {
+  padding          : 5px !important;
+  border-top       : solid 1px #68dbfd;
+  background-color : transparent;
+}
+
+.esriIdentityDialog .dijitButtonContents {
+  padding : 0 !important;
+}
+
+.esriIdentityDialog .dijitButton .dijitButtonNode {
+  border        : none;
+  padding       : 5px 8px;
+  border-radius : 0 !important;
+  background    : #333 !important;
+  box-shadow    : 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.esriIdentityDialog .dijitButtonDisabled .dijitButtonNode {
+  background : #384F55 !important;
+}
+
+.esriIdentityDialog .dijitButton .dijitButtonText {
+  font-size : 11pt !important;
+  color     : #fff !important;
+}
+
+.esriIdentityDialog .dijitButtonDisabled .dijitButtonText {
+  color : #ddd !important;
+}
+
+.esriIdentityDialog .dijitButtonHover .dijitButtonText {
+  color : #68dbfd !important;
+}

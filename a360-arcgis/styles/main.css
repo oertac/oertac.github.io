@@ -1,0 +1,86 @@
+html,
+body {
+  margin   : 0;
+  padding  : 0;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+
+#user-thumb-node {
+  height         : 36px;
+  border-radius  : 18px;
+  vertical-align : middle;
+}
+
+.drawer-nav {
+  width : 350px;
+}
+
+#loading-node {
+  box-shadow : none;
+}
+
+#loading-node .loader-text {
+  color       : #fff;
+  padding-top : 2.5rem;
+}
+
+#view-container {
+  width   : 100%;
+  height  : 100%;
+  margin  : 0;
+  padding : 0;
+}
+
+#map-panel,
+#forge-panel {
+  height : calc(100vh - 100px) !important;
+}
+
+.text-blue {
+  color : #69dcff !important;
+}
+
+.places-panel {
+  min-width  : 400px;
+  min-height : 100px;
+  background : rgba(51, 51, 51, 0.7);
+}
+
+.places-node {
+  position : relative;
+  float    : left;
+  margin   : 6px 3px;
+  padding  : 5px;
+  border   : solid 1px transparent;
+}
+
+.places-node:hover {
+  background   : rgba(51, 51, 51, 0.9);
+  border-color : #666;
+}
+
+.places-label {
+  font-size  : 9pt;
+  position   : absolute;
+  top        : 6px;
+  left       : 6px;
+  padding    : 0 3px;
+  color      : #69dcff;
+  background : rgba(51, 51, 51, 0.7);
+}
+
+.places-node:hover .places-label {
+  color      : #fff;
+  background : rgba(51, 51, 51, 1.0);
+}
+
+#layer_to_model_container {
+  max-height : 400px !important;
+  overflow   : auto;
+}
+
+.input-error-message.is-active {
+  position : absolute;
+}

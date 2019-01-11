@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
+    <link rel=icon href=assets/favicon.ico sizes="32x32" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/css/calcite-web-dark.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/esriIdentityDialog-dark-blue.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/themes/dark-blue/main.css">
+    <script src="./app/dojo.js"></script>
+    <script src="https://js.arcgis.com/4.7/"></script>
+    <script>require(["Application/init"]);</script>
+  </head>
+  <body class="">
+
+    <!-- DETAILS -->
+    <div class="js-modal modal-overlay" data-modal="app-details-dialog">
+      <div class="modal-content column-14" aria-labelledby="modal" role="dialog">
+        <span class="js-modal-toggle esri-interactive icon-ui-close right" aria-label="close-modal"></span>
+        <h3 class='trailer-half'>Esri & Autodesk - Web Application Template</h3>
+        <p>This web application template demonstrates simple integration between Esri Web Scenes and Autodesk Forge Models.</p>
+        <div>
+          This application is built using
+          <ul>
+            <li>
+              <a href="https://developers.arcgis.com/javascript/" target="_blank">Esri ArcGIS API for Javascript 4.x</a>
+            </li>
+            <li>
+              <a href="https://github.com/Esri/application-base-js" target="_blank">Esri ApplicationBase</a>
+              <span>&nbsp;&&nbsp;</span>
+              <a href="https://github.com/Esri/configurable-app-examples-4x-js" target="_blank">Configurable App Example</a>
+            </li>
+            <li>
+              <a href="http://esri.github.io/calcite-web/" target="_blank">Esri Calcite Web framework</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          Source code for this self-configurable template application:
+          <ul>
+            <li>
+              <a href="https://github.com/jgrayson-apl/ForgeTemplate" target="_blank">ForgeTemplate on GitHub</a>
+            </li>
+          </ul>
+        </div>
+        <img src="./assets/esri_science_of_where_white.png" class="left">
+        <div class="text-right">
+          <button class="btn js-modal-toggle">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFIGURE -->
+    <div id="configure-dialog" class="js-modal modal-overlay" data-modal="configure-dialog">
+      <div class="modal-content column-20" aria-labelledby="modal" role="dialog">
+        <!--<span class="js-modal-toggle esri-interactive icon-ui-close right" aria-label="close-modal"></span>-->
+        <h3 class="trailer-half text-blue">Edit Configuration</h3>
+        <div class="panel">
+          <div class="input-group">
+            <span class="input-group-button">
+              <div class="column-2">Web Scene</div>
+            </span>
+            <input id="web-scene-input" class="input-group-input" type="text" placeholder="enter Web Scene ID here">
+          </div>
+        </div>
+        <div id="layer_to_model_container" class="leader-quarter trailer-quarter">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width:30%;">Group Layer</th>
+                <th>Forge Model URL</th>
+              </tr>
+            </thead>
+            <tbody id="layer_to_model_list">
+              <tr>
+                <td id="no-configuration" colspan="3" align="center" class="avenir-italic">there are no group layers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <img src="./assets/esri_science_of_where_white.png" class="left">
+        <div class="text-right">
+          <button id="save-configuration-btn" class="btn btn-disabled">Save Configuration</button>
+          <button id="close-btn" class="btn js-modal-toggle">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAP SIDE DRAWER -->
+    <div class="drawer drawer-left js-drawer" data-drawer="top-nav" tabindex="0">
+      <nav class="drawer-nav" role="navigation">
+        <div class="panel panel-white panel-no-border">
+          <div id="current-map-card" class="card block margin-left-quarter margin-right-quarter">
+            <figure class="card-image-wrap">
+              <img id="current-map-card-thumb" class="card-image" src="" alt="">
+              <div id="current-map-card-caption" class="card-image-caption text-right font-size--3"></div>
+            </figure>
+            <div class="card-content">
+              <h4><a id="current-map-card-title" href="" target="_blank"></a></h4>
+              <p id="current-map-card-description" class="card-last font-size--3"></p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- BODY WRAPPER -->
+    <div class="wrapper">
+
+      <header class="top-nav">
+        <div class="grid-container">
+          <div class="column-24">
+
+            <!-- APP TITLE -->
+            <span id="app-title-node" class="top-nav-title text-blue"></span>
+
+            <!-- MAP AND CONTENT -->
+            <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+              <span class="top-nav-link icon-ui-maps esri-interactive text-blue js-drawer-toggle" data-drawer="top-nav" title="Details about the map...">Map</span>
+            </nav>
+
+            <!-- APP DETAILS -->
+            <nav id="app-details-node" class="top-nav-list margin-left-1 right" role="navigation">
+              <span class="top-nav-link icon-ui-description js-modal-toggle text-blue esri-interactive" data-modal="app-details-dialog"></span>
+            </nav>
+
+            <!-- SIGN IN NODE -->
+            <nav id="sign-in-node" class="top-nav-list right" role="navigation" aria-labelledby="usernav">
+              <span class="top-nav-link esri-interactive icon-ui-user margin-left-1 text-blue">Sign In</span>
+            </nav>
+
+            <!-- USER NODE -->
+            <div id="user-node" class="dropdown js-dropdown right hide">
+              <span class="top-nav-link icon-ui-user margin-left-1 text-blue esri-interactive js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                <span id="user-firstname-node"></span>
+              </span>
+              <nav class="dropdown-menu dropdown-right text-blue" role="menu">
+                <span class="dropdown-title">
+                  <span id="user-fullname-node"></span>
+                  <br>
+                  <img id="user-thumb-node" src="">
+                  <small><span id="username-node"></span></small>
+                </span>
+                <!--<a href="https://developers.arcgis.com/community/support" target="_blank" class="dropdown-link icon-ui-support" role="menu-item">Support</a>-->
+                <!--<a href="https://developers.arcgis.com/feedback/" target="_blank" class="dropdown-link icon-ui-link-external" role="menu-item">Feedback</a>-->
+                <span id="sign-out-node" class="dropdown-link esri-interactive icon-ui-sign-out" role="menu-item">Sign Out</span>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <div class="grid-container leader-half">
+
+        <div id="map-panel" class="column-24 panel panel-no-padding ">
+          <div id="view-container" class=""></div>
+        </div>
+
+        <div id="forge-panel" class="column-12 panel panel-no-padding hide">
+          <iframe id="forge-frame" class="" src="" width="100%" height="100%" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading-node" class="loader padding-leader-0 padding-trailer-0">
+      <div class="loader-bars"></div>
+      <div class="loader-text font-size--3">Updating...</div>
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div id="notifications-node"></div>
+
+  </body>
+</html>
+
