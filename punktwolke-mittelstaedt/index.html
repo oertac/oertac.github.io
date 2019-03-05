@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Filter points in a PointCloudLayer - 4.10</title>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #paneDiv {
+      padding: 6px;
+      background-color: rgba(255, 255, 255, 1);
+    }
+    label {
+      font-size: 18px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.10/"></script>
+
+
+  <script>
+    require([
+      "esri/WebScene",
+      "esri/views/SceneView",
+      "esri/layers/PointCloudLayer"
+    ], function(
+      WebScene, SceneView, PointCloudLayer
+    ) {
+
+      /******************************************************************
+       *
+       * Load WebScene with PointCloudLayer. Once loaded, apply
+       * filters based on point categories and return values.
+       *
+       ******************************************************************/
+
+      const webscene = new WebScene({
+        portalItem: {
+          id: "6b488b8e23f349eaa13a7f84bc75d6c5"
+        }
+      });
+
+      const view = new SceneView({
+        container: "viewDiv",
+        map: webscene
+      });
+
+      const vegetationFilter = [
+        // show only points that represent vegetation
+        {
+          type: "value",
+          field: "CLASS_CODE",
+          mode: "include",
+          // values include low, medium and high vegetation
+          values: [3, 4, 5]
+        },
+        // show only points from the first return
+        // (highest points in the landscape)
+        {
+          type: "return",
+          field: "RETURNS",
+          includedReturns: ["firstOfMany", "single"]
+        }
+      ];
+
+      const buildingsFilter = [
+        {
+          type: "value",
+          field: "CLASS_CODE",
+          mode: "include",
+          // only the building value is passed
+          values: [6]
+        }
+      ];
+      
+      const groundFilter = [
+        {
+          type: "value",
+          field: "CLASS_CODE",
+          mode: "include",
+          // only the ground value is passed
+          values: [2]
+        }
+      ];
+
+      view.when(function() {
+        const pcLayer = webscene.layers.getItemAt(0);
+
+        const radios = document.getElementsByName("filter");
+        // Handle change events on radio buttons to switch to the correct renderer
+        for (var i = 0; i < radios.length; i++) {
+          radios[i].addEventListener("change", function(event) {
+            var fieldName = event.target.value;
+            switch (fieldName) {
+              case "vegetation":
+                pcLayer.filters = vegetationFilter;
+                break;
+              case "buildings":
+                pcLayer.filters = buildingsFilter;
+                break;
+              case "ground":
+                pcLayer.filters = groundFilter;
+                break;  
+              default:
+                pcLayer.filters = [];
+            }
+          });
+        }
+      });
+
+      view.ui.add("paneDiv", "bottom-left");
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+  <div id="paneDiv" class="esri-widget">
+    <h3>Point cloud filtering </h3>
+    <input type="radio" name="filter" value="noFilter" checked> No filter<br>
+    <input type="radio" name="filter" value="ground" checked> Ground<br>
+    <input type="radio" name="filter" value="vegetation"> Filter
+    vegetation points<br>
+    <input type="radio" name="filter" value="buildings"> Filter building points<br>
+  </div>
+</body>
+
+</html>
