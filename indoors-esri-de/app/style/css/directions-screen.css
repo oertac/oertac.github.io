@@ -1,0 +1,165 @@
+
+.i-print-window-no-screen {
+  display: none;
+}
+
+.i-print-window {
+  /*padding: 30px 0;*/
+  /*margin: 20px auto;*/
+  padding: 0px;
+  margin: 8px;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+
+.i-print-window-actions {
+  float: right;
+}
+
+.i-print-window-actions .btn {
+  cursor: pointer;
+  margin: 4px;
+  padding: 8px 16px;
+}
+
+.i-print-window-actions .i-large.btn {
+  width: 120px;
+  height: 50px;
+  font-size: 24px;
+}
+
+/*
+.simpleDirections .esriPrintBar {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 6;
+    height: 50px;
+    background: #e2f1fc;
+    border-bottom: 1px solid #000;
+}
+*/
+
+.i-print-window-title {
+  color: #4c4c4c;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+}
+
+.i-print-window-cost-summary {
+  color: #4c4c4c;
+  margin-top: 20px;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.i-print-window-map {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.i-print-window-mapimage {
+  border: 1px solid #E8E8E8;
+  box-shadow: 2px 2px 5px #E8E8E8;
+  /*height: 500px; Urban 8/7/18*/
+  /*width: 80%; Urban 8/7/18*/
+}
+
+.i-print-window-wait {
+  background: #fff url(./images/Loading30_Trans.gif) no-repeat center center;
+  height: 200px;
+}
+
+.i-print-window-failed {
+  margin: 20px;
+  text-align: center;
+}
+
+.i-print-window-notes-area {
+  width: 80%;
+  margin: auto;
+  padding: 5px;
+  display: block;
+  margin-top: 30px;
+  border-color:  #E8E8E8;
+}
+
+table.i-print-window-directions {
+  border-collapse: collapse;
+  padding: 0;
+  border: 0;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+table.i-print-window-directions tr {
+  color: #4c4c4c;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+table.i-print-window-directions td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  vertical-align: top;
+}
+
+.i-print-window-row-icon {
+  fill: #4c4c4c;
+  width: 24px;
+  height: 24px;
+}
+
+.i-print-window-row-step {
+  font-weight: bold;
+}
+
+.i-print-window-row-info {
+  /*display: flex;*/
+  /*padding: 10px 5px;*/
+}
+
+.i-print-window-row-text {
+  display: inline-block;
+  width: 75%;
+}
+
+.i-print-window-row-length {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  font-size: 11px;
+  white-space: nowrap;
+  color: #4c4c4c;
+  /*float: right;*/
+}
+
+.i-print-window-row-length-cumulative {
+  /*margin-left: 22px;*/
+  /*padding-top: 2px;*/
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.i-print-window-directions-event {
+  /*margin-left: 22px;*/
+  /*padding-top: 2px;*/
+  font-size: 11px;
+}
+
+.i-print-window-row-text {
+  margin-bottom: 4px;
+}
+
+.i-print-window-row-length,
+.i-print-window-row-length-cumulative,
+.i-print-window-directions-event {
+  margin-bottom: 2px;
+}
+
+hr.i-print-window-no-print {
+   display: none;
+}

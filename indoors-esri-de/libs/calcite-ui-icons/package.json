@@ -1,0 +1,62 @@
+{
+  "_from": "github:ArcGIS/calcite-ui-icons",
+  "_id": "calcite-ui-icons@1.2.2",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/calcite-ui-icons",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "ArcGIS/calcite-ui-icons.git",
+    "rawSpec": "ArcGIS/calcite-ui-icons.git",
+    "saveSpec": "github:ArcGIS/calcite-ui-icons",
+    "fetchSpec": null,
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "github:ArcGIS/calcite-ui-icons#ddb627adb1deba8c7d30d58d894411e85f4f7976",
+  "_spec": "ArcGIS/calcite-ui-icons.git",
+  "_where": "/Users/pina9393/Indoors-WebApp",
+  "bugs": {
+    "url": "https://github.com/ArcGIS/calcite-ui-icons/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Frederic Aubry",
+      "email": "<faubry@esri.com"
+    },
+    {
+      "name": "Julio Ochoa",
+      "email": "<jochoa@esri.com"
+    },
+    {
+      "name": "John Griffith",
+      "email": "<jgriffith@esri.com"
+    },
+    {
+      "name": "Katelyn Seitz",
+      "email": "<kseitz@esri.com"
+    }
+  ],
+  "deprecated": false,
+  "description": "Contains the various svg icons used by ArcGIS applications.",
+  "homepage": "https://github.com/ArcGIS/calcite-ui-icons#readme",
+  "keywords": [
+    "arcgis",
+    "apps",
+    "icons",
+    "svg"
+  ],
+  "license": "MIT",
+  "name": "calcite-ui-icons",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArcGIS/calcite-ui-icons.git"
+  },
+  "version": "1.2.2"
+}

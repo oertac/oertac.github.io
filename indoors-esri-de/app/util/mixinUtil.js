@@ -1,0 +1,1 @@
+define(["require","exports"],function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.mixin=function(t,n){"object"==typeof t&&null!==t&&"object"==typeof n&&null!==n&&Object.keys(n).forEach(function(e){n.hasOwnProperty(e)&&(t[e]=n[e])})}});

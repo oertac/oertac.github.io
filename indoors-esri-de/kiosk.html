@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ArcGIS Indoors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="assets/arcgis_indoors_android_144.png">
+  <link rel="icon" href="assets/favicon.ico" sizes="32x32" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="../../jsapi/jsapi/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="../../jsapi/jsapi4/esri/css/main.css">
+  <link rel="stylesheet" href="app/style/css/main.css">
+  <link rel="stylesheet" href="app/style/css/theme.css">
+  <link rel="manifest" href="assets/manifest_kiosk.json">
+  <script>
+    var pathRegex = new RegExp(/\/[^\/]+$/);
+    var packagePath = location.pathname.replace(pathRegex, '');
+    if (packagePath.slice(-1) !== '/') { packagePath += '/'; }
+    var dojoConfig = {
+      parseOnLoad: true,
+      async: true,
+      //locale: dojoLocale,
+      packages: [{
+        name: "app",
+        location: packagePath + "app"
+      }],
+      has: {
+        "esri-featurelayer-webgl": 1,
+        "esri-promise-compatibility": 1
+      }
+    };
+  </script>
+  <script src="../../jsapi/jsapi4/"></script>
+</head>
+<body class="i-kiosk calcite">
+  <div id="layout-container"></div>
+  <div id="view-container" class="i-map" role="main"></div>
+  <script>require(["app/main/Startup"]);</script>
+</body>
+</html>

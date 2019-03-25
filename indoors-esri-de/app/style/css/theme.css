@@ -1,0 +1,88 @@
+:root {
+  /* Logo name (mobile form factors) */
+  --i-logo-name: ArcGIS Indoors;
+
+  /* Logo displayed in app and print output */
+  --i-logo-url: "./assets/indoors-logo.svg";
+
+  /* Logo width (max width 3rem) */
+  --i-logo-width: 2.5rem;
+
+  /* Logo height (max height 3rem) */
+  --i-logo-height: 2.5rem;
+
+  /* Logo width for print output */
+  --i-logo-print-width: 40px;
+
+  /* Logo height for print output */
+  --i-logo-print-height: 40px;
+
+
+  /* Color of primary text and some icons (ex. text in panels, map tool icons) */
+  --i-color-text-primary: #4c4c4c;
+
+  /* Color of secondary text and some icons (ex. subtitles in left and panels, some icons in the left panels) */
+  --i-color-text-secondary: #9e9e9e;
+
+  /* Color of tertiary text. Used for some text messages. */
+  --i-color-text-tertiary: #cccccc;
+
+  /* Brand primary text color. Color for text that sits on top of the brand color. (ex. text in info panel header) */
+  --i-color-brand-text-primary: #ffffff;
+
+
+  /* Brand primary color (ex. color of navigation menu, and header for info panel) */
+  --i-color-brand-primary: #005e95;
+
+  /* Brand secondary color (ex. color of buttons in info panel, and action links in Duirections panel) */
+  --i-color-brand-secondary: #0079c1;
+
+
+  /* Background color of menu icons (web) */
+  --i-color-brand-menu-icon-background: #5494b7;
+
+  /* Color of highlighted button in navigation menu (web) */
+  --i-color-brand-menu-icon-highlight: #003E62;
+
+  /* Color of text for buttons in navigation menu (web) */
+  --i-color-brand-menu-icon-text: #BED5E0;
+
+  /* Color of buttons in navigation menu (kiosk) */
+  --i-color-brand-menu-background-kiosk: rgba(0, 94, 149, 0.95);
+
+  /* Color of highlighted button in navigation menu (kiosk) */
+  --i-color-brand-menu-highlight-kiosk: rgba(0, 62, 98, 0.95);
+
+
+  /* Background color for panels and map tool buttons. */
+  --i-color-background: #ffffff;
+
+  /* Color of background while hovering in panels and drop-down menus. */
+  --i-color-background-highlight: #efefef;
+
+  /* Color of modal background */
+  --i-color-modal-background: rgba(0,0,0,0.4);
+
+
+  /* Color of borders */
+  --i-color-border: #dfdfdf;
+
+  /* Color used for box shadowing. Shadow for application panels. */
+  --i-color-panel-shadow: rgba(0,0,0,0.74);
+
+  /* A lighter version of the panel shadowing. */
+  --i-color-box-shadow-light: rgba(0,0,0,0.3);
+
+
+  /* Color of toast notification background */
+  --i-color-toast-background: #efe397;
+
+  /* Color of toast notification border */
+  --i-color-toast-border: #94221E;
+
+  /* Color of toast notification background (danger) */
+  --i-color-toast-background-danger: #e4a793;
+  
+  /* Color of toast notification border (danger) */
+  --i-color-toast-border-danger: #ab3c16;
+}

@@ -1,0 +1,169 @@
+/*------------------------Style settings for brand background color other than white ------------------------ */
+
+
+
+
+/* Color for map control buttons icon when hovered */
+.esri-widget--button span:hover {
+    color: #4c4c4c; /*same as brand-primary-text-color*/
+}
+
+/* Color for searchbox buttons in the header when hovered */
+.i-searchbox .esri-widget--button span:hover {
+    color: #4c4c4c; /*same as brand-primary-text-color*/
+}
+
+/* Color for dropdown menu text color and background */
+.esri-menu{
+    background-color: white; /*same as brand-background-color */
+    color: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+/* Color for underline below main search field */
+.esri-search__input {
+    border-bottom: 1px solid #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for underline below main search buttons */
+.i-searchbox .esri-widget--button{
+    border-bottom: 1px solid #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for search input placeholder text in the directions panel */
+.esri-directions .esri-search-form input::-webkit-input-placeholder {
+    color: #828282; /*same as brand-secondary-text-color */
+}
+
+/* Background color for higlighting the selected item in explore/your places panel */
+ul.i-feature-items > li > a:hover{
+  background-color: #efefef; /* Same as brand-highlight-color */
+}
+
+/* Color for map control buttons and other */
+.esri-widget--button{
+    background-color: white; /*same as brand-background-color */
+    color: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+
+/* Color for search input text */
+.esri-input {
+    color: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+
+/* Color for search suggestions header */
+.esri-menu .esri-header{
+    background-color: #efefef; /* A very light gray for white background and appropriately dark color for dark background  */
+    color: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+/* Background color for higlighting the selected item in the search suggestions */
+.esri-menu li:hover{
+    background-color: #efefef; /* Same as brand-highlight-color */
+}
+
+/* Color for icons in the explore/your places panel*/
+svg.i-feature-item-icon{
+    fill: #828282; /*same as brand-secondary-text-color */
+}
+
+/* Color for icons in the explore/your places panel when item selected*/
+ul.i-feature-items > li > a:hover svg.i-feature-item-icon{
+    fill: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+/* Color for text in directions panel */
+.esri-directions{
+    color: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+/* Color for sub-text in directions panel */
+.esri-directions__costs-value, .esri-directions__other-costs-total{
+    color: #828282; /*same as brand-secondary-text-color */
+}
+
+/* Color for vertical splitter in directions panel */
+.esri-directions__vertical-splitter {
+    border-color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for buttons in directions panel */
+.esri-button--tertiary{
+    color: #828282; /*same as brand-secondary-text-color */
+}
+
+/* Color for buttons in directions panel when hovered */
+.esri-button--tertiary:hover{
+    color:#4c4c4c; /*same as brand-primary-text-color */
+}
+
+/* Color for main search input placeholder text */
+input.esri-input.esri-search__input::placeholder {
+    color: #4c4c4c; /*same as brand-secondary-text-color */
+}
+
+/* Color for search input underline when focussed */
+input:focus, select:focus, textarea:focus {
+    border-color: #ccc;/*same as brand-tertiary-text-color */
+}
+
+/* Color for search input underline */
+.esri-directions__stop-underline {
+    border-color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for dashed vertical line between stops */
+.esri-directions__stop-icon-container::after{
+    border-color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for header text in directions section*/
+.esri-widget__header{
+    color: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+/* Color for travel modes select dropdown option */
+.esri-directions__travel-modes-select{
+    color: #828282; /*same as brand-secondary-text-color */
+    border-color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for the message text when no directions available*/
+.esri-directions__message{
+    color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for the illustration when no directions available*/
+.esri-widget__content-illustration--empty svg{
+    color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for the horizontal seperator line */
+.esri-directions__horizontal-splitter{
+    border-color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for highlighting a part in directions section */
+.esri-directions__maneuver:hover, .esri-directions__maneuver:focus{
+    background-color: #efefef; /* Same as brand-highlight-color */
+}
+
+/* Color for the horizontal seperator line */
+.esri-directions__section-splitter{
+    border-color: #ccc; /*same as brand-tertiary-text-color */
+}
+
+/* Color for the Esri disclamer text */
+.esri-directions__disclaimer{
+    color: #828282; /*same as brand-secondary-text-color */
+}
+
+/* Color for the Info Panel close icon */
+.i-panel-close .icon{
+    fill: #4c4c4c; /*same as brand-primary-text-color */
+}
+
+.i-dropdown-menu-content{
+   color: #4c4c4c;
+}

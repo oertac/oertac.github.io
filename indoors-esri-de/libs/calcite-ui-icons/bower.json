@@ -1,0 +1,24 @@
+{
+  "name": "calcite-ui-icons",
+  "authors": [
+    "Frederic Aubry <faubry@esri.com>",
+    "Julio Ochoa <jochoa@esri.com>"
+  ],
+  "description": "Contains the various svg icons used by ArcGIS applications.",
+  "main": "",
+  "keywords": [
+    "arcgis",
+    "apps",
+    "icons",
+    "svg"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
