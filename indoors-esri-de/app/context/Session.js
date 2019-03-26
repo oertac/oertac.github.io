@@ -1,1 +1,0 @@
-define(["require","exports","../yourplaces/ReferenceLayer"],function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=function(){this.referenceLayer=new t.default};r.default=n});
