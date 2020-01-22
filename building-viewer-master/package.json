@@ -1,0 +1,42 @@
+{
+  "name": "building-viewer",
+  "version": "1.0.0",
+  "description": "This application demonstrates the use of various Building Scene Layer related API",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:esri/building-viewer.git"
+  },
+  "scripts": {
+    "dev": "tsc -w & sass --watch src:src",
+    "lint": "tslint './src/*.ts'",
+    "build": "tsc & sass src:src",
+    "dist": "grunt dist",
+    "server": "grunt"
+  },
+  "keywords": [
+    "esri",
+    "typescript"
+  ],
+  "author": "Yannik Messerli <ymesserli@esri.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-dojo": "^1.1.2",
+    "grunt-include-source": "^1.1.0",
+    "grunt-run": "^0.8.1",
+    "grunt-stripcomments": "^0.7.2",
+    "js-yaml": ">=3.13.1",
+    "tslint": "^4.2.0"
+  },
+  "dependencies": {
+    "@types/dojo": "1.9.41",
+    "sass": "^1.17.0",
+    "typescript": "3.3"
+  }
+}
